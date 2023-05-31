@@ -1,15 +1,18 @@
 extends Control
 
 func _ready():
-    var a = ResA.new()
+    var a = []
 
-    # Change this number to 386
-    for i in range(385):
-        var b = ResB.new()
-        a.bs.append(b)
-        for j in range(10):
-            var c = ResC.new()
-            b.cs.append(c)
+    var too_many = 3745
+    var just_enough = 3744
 
-    # then stop at a breakpoint here to see debugger shows a as <null>
-    print(a)
+    for i in range(too_many):
+#    for i in range(just_enough):
+        var b = ResA.new()
+        a.append(b)
+
+    # Put a breakpoint down here. If you've got just enough then the
+    # debugger shows the value of `a`. If you've got too many then
+    # the debugger shows <null>.
+    # But you can still use `a` just fine
+    print(a.size())
